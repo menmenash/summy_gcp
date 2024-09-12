@@ -51,7 +51,7 @@ from google.cloud import storage
 
 def main():
     # Set the GOOGLE_APPLICATION_CREDENTIALS environment variable
-    project_id = "zeta-bebop-416515"  # Replace with your actual project ID
+    project_id = ""  # Replace with your actual project ID
  
     # Find the credentials file that starts with project_id and has a .json extension
     credentials_files = glob.glob(f"{project_id}*.json")

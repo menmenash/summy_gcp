@@ -1,0 +1,14 @@
+# Google Cloud Libraries
+google-cloud-firestore==2.5.0
+google-cloud-storage==2.5.0
+
+# OpenAI API Client
+openai==0.27.0
+
+# Web Scraping and PDF Handling
+playwright==1.30.0
+beautifulsoup4==4.11.1
+pdfminer.six==20201018
+
+# Telegram Bot API
+python-telegram-bot==20.0

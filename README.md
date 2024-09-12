@@ -54,6 +54,7 @@ Leverages OpenAI's API for text summarization and various GCP services for stora
  
   - Summy is at your service!
      - /set <lang> <word limit> [max chars]: Set configuration.
+     - /get: Print the configuration.
      - /summ <url>: Summarize the article at the given URL.
      - /summ pdf: Summarize an uploaded PDF file.
      - /resp <response>: Get a follow-up response to the last summary.

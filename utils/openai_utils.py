@@ -38,6 +38,7 @@ Note:
 
 import openai
 import logging
+
 logger = logging.getLogger(__name__)
 
 class OpenAIUtils:
@@ -84,7 +85,13 @@ class OpenAIUtils:
             logger.error(f"Error in OpenAI API call: {str(e)}")
             raise
 
-    def get_openai_response(self, prompt: str) -> str:
+    def get_openai_response(self, prompt: str, config: dict) -> str:
+
+        translation_instruction = "Translate the answer to Hebrew, except Brands or technology terms and definitions. " if config.get('lang') == 'heb' else ""
+        restricted_prompt = (
+            f"{translation_instruction}"
+            f"{prompt}answer no longer than {config.get('words_limit')} words."
+        )
         try:
             response = openai.chat.completions.create(
                 model="gpt-4-turbo-preview",
@@ -93,7 +100,7 @@ class OpenAIUtils:
                 n=1,
                 stop=None,
                 messages=[
-                    {"role": "user", "content": prompt}
+                    {"role": "user", "content": restricted_prompt}
                 ]
             )
 

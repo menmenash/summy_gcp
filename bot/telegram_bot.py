@@ -202,7 +202,7 @@ class TelegramBot:
             return
 
         prompt = f"{last_text}\n\n\n\n\n\n{user_resp}\n\n"
-        response = self.openai_utils.get_openai_response(prompt)
+        response = self.openai_utils.get_openai_response(prompt, config)
 
         telegram_response = prepare_message_for_telegram(response, config['telegram_message_size_limit'])
         await update.message.reply_html(telegram_response)

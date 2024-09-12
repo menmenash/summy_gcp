@@ -51,9 +51,10 @@ Leverages OpenAI's API for text summarization and various GCP services for stora
 4. Run main.py in detached mode.
    
 ## Usage
-
-"Summy is at your service!\n"
-            "- /set <lang> <word limit> [max chars]: Set configuration.\n"
-            "- /summ <url>: Summarize the article at the given URL.\n"
-            "- /summ pdf: Summarize an uploaded PDF file.\n"
-            "- /resp <response>: Get a follow-up response to the last summary.\n"
+ 
+  - Summy is at your service!
+     - /set <lang> <word limit> [max chars]: Set configuration.
+     - /get: Print the configuration.
+     - /summ <url>: Summarize the article at the given URL.
+     - /summ pdf: Summarize an uploaded PDF file.
+     - /resp <response>: Get a follow-up response to the last summary.

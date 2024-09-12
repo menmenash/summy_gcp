@@ -215,6 +215,10 @@ class TelegramBot:
         
         # Verify that the file is a valid PDF
         document = update.message.document
+        if (document == None):
+            await update.message.reply_text('Please upload a valid PDF file.')
+            return
+
         if document.mime_type == 'application/pdf':
             # Handle the pdf
             article_text = await self.text_extractor.extract_from_pdf(document, context)
@@ -223,6 +227,7 @@ class TelegramBot:
             await update.message.reply_html(summary)
         else:
             await update.message.reply_text('Please upload a valid PDF file.')
+            return
 
         # Store the full article in GCS bucket
         try:
